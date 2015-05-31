@@ -1,11 +1,11 @@
-FROM fedora:20
+FROM fedora:22
 MAINTAINER Vojtech Juranek <vjuranek@redhat.com>
 
 # Execute system update
 RUN yum -y update && yum clean all
 
 # Install JDK and ssh server
-RUN yum -y install java-1.7.0-openjdk-devel openssh-server && yum clean all
+RUN yum -y install java-1.8.0-openjdk-devel openssh-server && yum clean all
 
 # Generate ssh key
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
