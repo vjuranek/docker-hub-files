@@ -2,10 +2,10 @@ FROM fedora:22
 MAINTAINER Vojtech Juranek <vjuranek@redhat.com>
 
 # Execute system update
-RUN yum -y update && yum clean all
+RUN dnf -y update && dnf clean all
 
 # Install JDK and ssh server
-RUN yum -y install java-1.8.0-openjdk-devel openssh-server && yum clean all
+RUN dnf -y install java-1.8.0-openjdk-devel openssh-server && dnf clean all
 
 # Generate ssh key
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
