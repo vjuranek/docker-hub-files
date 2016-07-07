@@ -21,6 +21,9 @@ RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
 ADD radargun-docker.pub /home/radargun/.ssh/authorized_keys
 RUN chown radargun:radargun /home/radargun/.ssh/authorized_keys && chmod 0600 /home/radargun/.ssh/authorized_keys
 
+# Additional packages used by 3rh party tools, e.g. Jenkins
+RUN dnf -y install openssh-clients
+
 # Expose standard SSH port
 EXPOSE 22
 
