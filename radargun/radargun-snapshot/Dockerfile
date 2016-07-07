@@ -19,7 +19,9 @@ RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
 
 # Add ssh key so we can log in automatically
 ADD radargun-docker.pub /home/radargun/.ssh/authorized_keys
-RUN chown radargun:radargun /home/radargun/.ssh/authorized_keys && chmod 0600 /home/radargun/.ssh/authorized_keys
+ADD radargun-docker /home/radargun/.ssh/id_rsa
+ADD radargun-docker.pub /home/radargun/.ssh/id_rsa.pub
+RUN chown -R radargun:radargun /home/radargun/.ssh && chmod 0600 /home/radargun/.ssh/id_rsa /home/radargun/.ssh/authorized_keys
 
 # Additional packages used by 3rh party tools, e.g. Jenkins
 RUN dnf -y install openssh-clients
