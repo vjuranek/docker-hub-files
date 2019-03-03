@@ -1,0 +1,6 @@
+= SCIAS Potgres database
+
+== How to urn it
+
+* `docker pull vjuranek/scias-db`
+* `docker run --name scias-db -e POSTGRES_USER=scias -e POSTGRES_PASSWORD=scias -e POSTGRES_DB=scias_malaria -d vjuranek/scias-db`
