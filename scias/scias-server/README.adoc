@@ -6,7 +6,7 @@
 
 === Obtaining IP address
 
-* `export SERVER_IP=\`docker inspect -f "{{ .NetworkSettings.IPAddress }}" scias-sever\``
+* `export SERVER_IP=`docker inspect -f "{{ .NetworkSettings.IPAddress }}" scias-sever``
 
 === Deploying SCIAS app
 
