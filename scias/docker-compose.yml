@@ -1,0 +1,14 @@
+version: '3'
+services:
+  scias-db:
+    image: "vjuranek/scias-db"
+    environment:
+      POSTGRES_USER: scias
+      POSTGRES_PASSWORD: scias
+      POSTGRES_DB: scias_malaria
+  scias-server:
+    image: "vjuranek/scias-server"
+    depends_on:
+      - scias-db
+    links:
+      - scias-db:postgres
