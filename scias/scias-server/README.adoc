@@ -4,8 +4,14 @@
 
 * `docker run --name scias-sever --link scias-db:postgres -d vjuranek/scias-server`
 
-* navigate to `http://172.17.0.3:9990`
+=== Obtaining IP address
+
+* `export SERVER_IP=\`docker inspect -f "{{ .NetworkSettings.IPAddress }}" scias-sever\``
+
+=== Deploying SCIAS app
+
+* navigate to `http://$SERVER_IP:9990`
 * log in as `scias/scias`
 * deploy scias app
 
-* `curl -v http://172.17.0.3:8080/malaria-server/rest/analysis/`
+* `curl -v http://$SERVER_IP:8080/malaria-server/rest/analysis/`
