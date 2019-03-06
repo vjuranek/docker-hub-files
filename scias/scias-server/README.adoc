@@ -2,11 +2,11 @@
 
 == How to run it
 
-* `docker run --name scias-sever --link scias-db:postgres -d vjuranek/scias-server`
+* `docker run --name scias-server --link scias-db:postgres -d vjuranek/scias-server`
 
 === Obtaining IP address
 
-* `export SERVER_IP=`docker inspect -f "{{ .NetworkSettings.IPAddress }}" scias-sever``
+* `export SERVER_IP=`docker inspect -f "{{ .NetworkSettings.IPAddress }}" scias-server``
 
 === Deploying SCIAS app
 
